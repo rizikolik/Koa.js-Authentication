@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "video-app-koa.herokuapp.com/api",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "paths": {
     "/login": {
       "post": {
