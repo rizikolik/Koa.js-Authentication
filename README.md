@@ -64,7 +64,7 @@ Check collection with Postman : <br>
 
 <p  align="left">
 
-[![Run in Postman](https://run.pstmn.io/button.svg)]()
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/d7100bdb136d037fbc5f)
 
 </p>
 </details>

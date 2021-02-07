@@ -1,4 +1,5 @@
 const Koa = require("koa");
+const cors = require("@koa/cors");
 const session = require("koa-session");
 const passport = require("koa-passport");
 const bodyParser = require("koa-bodyparser");
@@ -20,6 +21,7 @@ seedDB = require("../seeds");
 // startup
 
 const app = new Koa();
+app.use(cors());
 app.use(session(app));
 // body parser
 app.use(bodyParser());
@@ -35,7 +37,7 @@ app
   .use(VideoModule.router.routes())
   .use(VideoModule.router.allowedMethods());
 
-seedDB();
+//seedDB();
 // error logger With Morgan+Winston
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development

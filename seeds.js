@@ -35,23 +35,22 @@ let seedDB = () => {
         })
       : null;
   });*/
-
   /* Video.deleteMany({}, (err) => {
     if (err) {
       console.log(err);
     } else {
       console.log("removed models!");
-    }*/
-  videosArray.forEach((seed) => {
-    Video.create(seed, (err, type) => {
-      if (err) {
-        console.log("error at Video model seeding", err);
-      } else {
-        console.log("Video seed success");
-      }
+    }
+    videosArray.forEach((seed) => {
+      Video.create(seed, (err, type) => {
+        if (err) {
+          console.log("error at Video model seeding", err);
+        } else {
+          console.log("Video seed success");
+        }
+      });
     });
-  });
-  // });
+  });*/
 };
 
 module.exports = seedDB;

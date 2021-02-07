@@ -1,7 +1,7 @@
 const videosArray = [
   {
     title: "test1",
-    author: "601dd8dc2424e92775ccc007",
+    author: "60204545107cb80004e5cf5c",
     source: "https://www.w3schools.com/html/movie.mp4",
     duration: 12.612,
     date: null,
@@ -135,7 +135,7 @@ const videosArray = [
   },
   {
     title: "test2",
-    author: "601dd8dc2424e92775ccc007",
+    author: "60204545107cb80004e5cf5c",
     source: "https://www.w3schools.com/html/mov_bbb.mp4",
     duration: 10.026667,
     date: null,
