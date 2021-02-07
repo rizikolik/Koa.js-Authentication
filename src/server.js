@@ -23,7 +23,7 @@ const app = new Koa();
 app.use(session(app));
 // body parser
 app.use(bodyParser());
-const dbURI = "mongodb://localhost:27017/videoApp";
+const dbURI = config.selectedENV.mongoUrl;
 app
   .use(morgan("combined", { stream: logger.stream })) // Combine morgan's console logs with winston logs
 
@@ -35,7 +35,7 @@ app
   .use(VideoModule.router.routes())
   .use(VideoModule.router.allowedMethods());
 
-//seedDB();
+seedDB();
 // error logger With Morgan+Winston
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development

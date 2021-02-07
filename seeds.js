@@ -12,7 +12,7 @@ Object.keys(formats).forEach((key) => {
 
 let seedDB = () => {
   //REMOVE ALL//
-  VideoType.deleteMany({}, (err) => {
+  /* VideoType.deleteMany({}, (err) => {
     if (err) {
       console.log(err);
     } else {
@@ -22,7 +22,7 @@ let seedDB = () => {
     /*=========================================================
    Add All media types to Database
     /*=========================================================*/
-
+  /*
     types.length > 0
       ? types.forEach((seed) => {
           VideoType.create(seed, (err, type) => {
@@ -34,7 +34,7 @@ let seedDB = () => {
           });
         })
       : null;
-  });
+  });*/
 
   /* Video.deleteMany({}, (err) => {
     if (err) {
