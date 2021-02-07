@@ -17,6 +17,7 @@
 - #### Jsonwebtokens
 - #### Supertest for testing API's
 - #### heroku-cli - for deployment
+- #### Swagger Ui for Documentation
 
 <details><summary><b>Installation Instructions</b></summary><br>
 

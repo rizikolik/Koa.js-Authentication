@@ -11,8 +11,6 @@ const swagger = require("swagger2");
 const { ui, validate } = require("swagger2-koa");
 const config = require("../config");
 const swaggerDocument = require("./swagger.json");
-//MiddleWare for Auth
-const requireLogin = require("./middleware/requireLogin");
 
 // Modules that will be used by App //
 
@@ -25,7 +23,7 @@ const app = new Koa();
 app.use(session(app));
 // body parser
 app.use(bodyParser());
-const dbURI = config.selectedENV.mongoUrl;
+const dbURI = "mongodb://localhost:27017/videoApp";
 app
   .use(morgan("combined", { stream: logger.stream })) // Combine morgan's console logs with winston logs
 
@@ -34,10 +32,6 @@ app
   .use(ui(swaggerDocument, "/documentation"))
   .use(UserModule.router.routes())
   .use(UserModule.router.allowedMethods())
-  .use(async (ctx, next) => {
-    return requireLogin(ctx, next);
-  })
-  //Routes will be Available after MiddleWare for Login
   .use(VideoModule.router.routes())
   .use(VideoModule.router.allowedMethods());
 

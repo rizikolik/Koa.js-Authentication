@@ -21,7 +21,7 @@ router.post("/login", async (ctx) => {
         ctx.body = await Login(user._doc);
       } else {
         ctx.status = 400;
-        ctx.body = { status: "error" };
+        ctx.body = { status: "Not registered User" };
       }
     }
   )(ctx);
