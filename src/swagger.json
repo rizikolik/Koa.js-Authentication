@@ -5,7 +5,7 @@
     "description": "This is an example Koa API that provides end poins for authentication and Video Metadata's",
     "version": "1.0.0"
   },
-  "host": "localhost:5000/api",
+  "host": "https://video-app-koa.herokuapp.com/api",
   "schemes": ["http"],
   "paths": {
     "/login": {

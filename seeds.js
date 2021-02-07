@@ -3,8 +3,6 @@ const mongoose = require("mongoose"),
   VideoType = require("./src/models/Video/VideoTypeSchema");
 const formats = require("./ffmegTypes");
 const videosArray = require("./SeedVideos");
-/*sample: https://www.w3schools.com/html/movie.mp4
-sample: https://www.w3schools.com/html/mov_bbb.mp4*/
 
 let types = [];
 
@@ -14,7 +12,7 @@ Object.keys(formats).forEach((key) => {
 
 let seedDB = () => {
   //REMOVE ALL//
-  /*VideoType.deleteMany({}, (err) => {
+  VideoType.deleteMany({}, (err) => {
     if (err) {
       console.log(err);
     } else {
@@ -25,7 +23,7 @@ let seedDB = () => {
    Add All media types to Database
     /*=========================================================*/
 
-  /*types.length > 0
+    types.length > 0
       ? types.forEach((seed) => {
           VideoType.create(seed, (err, type) => {
             if (err) {
@@ -36,7 +34,7 @@ let seedDB = () => {
           });
         })
       : null;
-  });*/
+  });
 
   /* Video.deleteMany({}, (err) => {
     if (err) {
