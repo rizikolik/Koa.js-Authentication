@@ -2,11 +2,13 @@ const { getTokenFromRequest, verifyToken } = require("../utils/tokenUtils");
 
 module.exports = async (ctx, next) => {
   if (!isLoggedIn(ctx.request)) {
-    throw new Error(
-      "You must login or provide a valid token for the current request!"
-    );
+    ctx.status = 404;
+    ctx.body = {
+      message:
+        "Check Your Token or Go to Login or Signup for Getting a Valid Token",
+    };
+    return ctx;
   }
-
   await next();
 };
 

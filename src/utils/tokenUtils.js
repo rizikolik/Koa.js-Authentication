@@ -23,10 +23,9 @@ const verifyToken = (token) => {
   try {
     const verifiedPayload = jwt.verify(token, config.selectedENV.jwtSecret);
     //Here time check will be added for token refresh process
-
     return verifiedPayload;
   } catch (error) {
-    console.log(error, "errrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+    console.log(error, "token validate error");
     return null;
   }
 };

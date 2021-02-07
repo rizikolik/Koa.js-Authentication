@@ -2,15 +2,14 @@ const mongoose = require("mongoose");
 const ffmpeg = require("fluent-ffmpeg");
 
 const findAllVideos = (req) => {
-  console.log(req);
   const Video = mongoose.model("Video");
 
   let options = {
     limit: 5,
   };
   let queryParams = {};
-  if (!req.query.aspect_ratio) {
-    queryParams["ratio"] = { $eq: req.query.aspect_ratio };
+  if (req.query.ratio) {
+    queryParams["ratio"] = { $eq: req.query.ratio };
   }
   return Video.paginate(queryParams, options);
 };
@@ -54,9 +53,14 @@ const createNewVideo = async (req) => {
   return savedInstance;
 };
 
-const findVideoById = (id) => {
+const findVideoById = async (id) => {
   const Video = mongoose.model("Video");
-  return Video.findOne({ id }).exec();
+  let response = await Video.findById(id).populate([
+    { path: "author", select: "-password" }, //Hide Password
+    "extension",
+  ]);
+
+  return response;
 };
 
 module.exports = {

@@ -29,7 +29,6 @@ const Login = async (user) => {
     const response = await LoginUser(user);
     return response;
   } catch (err) {
-    console.log(err, "here second error");
     return { message: err.message };
   }
 };
