@@ -29,7 +29,7 @@ app
 
   .use(passport.initialize())
 
-  .use(ui(swaggerDocument, "/"))
+  .use(ui(swaggerDocument, "/documentation"))
   .use(UserModule.router.routes())
   .use(UserModule.router.allowedMethods())
   .use(VideoModule.router.routes())

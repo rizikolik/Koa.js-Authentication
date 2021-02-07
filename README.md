@@ -51,13 +51,14 @@ $ npm start
 
 ```
 
+Documentation for Api is at the /documentation route.
 Now its ready at your configured port or at http://localhost:5000/api/
 
 </details>
 
 <details><summary><b>Deployment </b></summary><br>
 
-Deployed on Heroku @
+Deployed on Heroku @ https://video-app-koa.herokuapp.com
 
 Check collection with Postman : <br>
 
