@@ -27,6 +27,8 @@
     "nodemon": "^2.0.7",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "swagger2": "^2.0.0",
+    "swagger2-koa": "^2.0.0",
     "winston": "^3.3.3"
   },
   "engines": {

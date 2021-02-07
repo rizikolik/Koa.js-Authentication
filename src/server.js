@@ -7,7 +7,10 @@ const { dbConnect } = require("./database");
 const path = require("path");
 const logger = require("./utils/logger");
 const morgan = require("koa-morgan");
+const swagger = require("swagger2");
+const { ui, validate } = require("swagger2-koa");
 const config = require("../config");
+const swaggerDocument = require("./swagger.json");
 
 // Modules that will be used by App //
 
@@ -21,14 +24,16 @@ app.use(session(app));
 // body parser
 app.use(bodyParser());
 const dbURI = config.selectedENV.mongoUrl;
-app.use(morgan("combined", { stream: logger.stream })); // Combine morgan's console logs with winston logs
+app
+  .use(morgan("combined", { stream: logger.stream })) // Combine morgan's console logs with winston logs
 
-app.use(passport.initialize());
+  .use(passport.initialize())
+  .use(ui(swaggerDocument, "/documentation"))
+  .use(UserModule.router.routes())
+  .use(UserModule.router.allowedMethods())
+  .use(VideoModule.router.routes())
+  .use(VideoModule.router.allowedMethods());
 
-app.use(UserModule.router.routes());
-app.use(UserModule.router.allowedMethods());
-app.use(VideoModule.router.routes());
-app.use(VideoModule.router.allowedMethods());
 //seedDB();
 // error logger With Morgan+Winston
 app.use(function (err, req, res, next) {
