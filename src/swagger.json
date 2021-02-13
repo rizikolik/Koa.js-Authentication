@@ -5,7 +5,7 @@
     "description": "This is an example Koa API that provides end poins for authentication and Video Metadata's",
     "version": "1.0.0"
   },
-  "host": "3.138.202.116:5000//api",
+  "host": "http://3.137.214.132:5000/api",
   "schemes": ["http"],
   "paths": {
     "/login": {
