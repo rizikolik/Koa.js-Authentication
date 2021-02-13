@@ -16,7 +16,8 @@
 - #### Passport-Local
 - #### Jsonwebtokens
 - #### Supertest for testing API's
-- #### heroku-cli - for deployment
+- #### Docker for containerizing
+- #### AWS ECS- for deployment
 - #### Swagger Ui for Documentation
 
 <details><summary><b>Installation Instructions</b></summary><br>
@@ -58,7 +59,7 @@ Now its ready at your configured port or at http://localhost:5000/api/
 
 <details><summary><b>Deployment </b></summary><br>
 
-Deployed on Heroku @ https://video-app-koa.herokuapp.com
+Deployed on AWS ECS @ http://3.138.202.116:5000/documentation
 
 Check collection with Postman : <br>
 
