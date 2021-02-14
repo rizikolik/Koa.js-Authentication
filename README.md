@@ -59,7 +59,7 @@ Now its ready at your configured port or at http://localhost:5000/api/
 
 <details><summary><b>Deployment </b></summary><br>
 
-Deployed on AWS ECS @ http://3.22.27.236:5000/documentation
+Deployed on AWS ECS @ http://http://3.22.27.236:5000/documentation
 
 Check collection with Postman : <br>
 
